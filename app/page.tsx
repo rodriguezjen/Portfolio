@@ -1,6 +1,6 @@
 "use client"
 
-import { Header, Mainpage,About} from "./components/index";
+import { Header, Mainpage,About,Portfolio} from "./components/index";
 import { useState } from "react";
 
 export default function Home() {
@@ -8,9 +8,9 @@ export default function Home() {
   return (
    <main className="w-screen h-screen overflow-x-hidden flex flex-col">
     <Header setNav={setNav}></Header>
-    {nav==="mainpage"&&<Mainpage></Mainpage>}
+    {nav==="mainpage"&&<Mainpage setNav={setNav}></Mainpage>}
     {nav==="about"&&<About></About>}
-    
+    {nav==="portfolio"&&<Portfolio/>}
     
    </main>
   );

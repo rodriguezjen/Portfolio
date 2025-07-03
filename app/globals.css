@@ -16,6 +16,7 @@
   --color-css-color:#3C99DC;
   --color-js-color:#F7DF1E;
   --color-tailwind:#38BDF8;
+  --color-color:#FFE3BB;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,3 +32,4 @@ body {
   font-family: "Arvo",serif;
   font-family: "Lexend Deca",sans-serif;
 }
+
