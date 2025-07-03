@@ -41,7 +41,7 @@ const techStack:Record<string,JSX.Element>={
         <div className='flex flex-col px-3 justify-center'>
            
             <div className='flex justify-end text-2xl gap-3'>
-              {tech.map((val,i)=>(
+              {tech.map((val)=>(
                 techStack[val]
               ))}
             </div>
