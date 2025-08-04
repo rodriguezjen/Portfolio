@@ -31,7 +31,7 @@ const techStack:Record<string,JSX.Element>={
 
 }
   return (
-    <motion.div initial={{scale:0.7,opacity:0}} animate={{scale:1,opacity:1 }} transition={{ type: "spring", stiffness: 100, damping: 20, delay:delay,}} className='h-full col-span-1 rounded-xl border-blue-300 border-2 flex flex-col bg-white/20 backdrop-blur-lg overflow-hidden'>
+    <motion.div initial={{scale:0.7,opacity:0}} animate={{scale:1,opacity:1 }} transition={{ type: "spring", stiffness: 100, damping: 20, delay:delay,}} className='md:h-full h-max pb-5 md:pb-0 col-span-1 rounded-xl border-blue-300 border-2 flex flex-col bg-white/20 backdrop-blur-lg overflow-hidden'>
         <div className='h-auto w-full relative'>           
             <Image className='w-full object-contain rounded-b-2xl overflow-hidden' src={projimg} alt='img' height={1000} width={1000} priority/>
             <Image className={`h-20 w-20 object-cover rounded-full border-2 object-center border-blue-500 ml-3 absolute ${icontop} bg-white`} src={projlogo} alt='logo' height={1000} width={1000} priority />

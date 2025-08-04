@@ -7,37 +7,42 @@ import { NavProps } from '../types';
 
 const Mainpage = ({setNav}:NavProps) => {
 const toggleNav = (nav:string) => {
-  setNav(nav);
+setTimeout(()=>{
+   setNav(nav);
+},100)
+  
 }
   return (
-    <div className='h-full w-full grid grid-cols-2 grid-rows-2 justify-around overflow-x-hidden bg-custom-black'>
-        <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.8,ease:"easeInOut"}} className='col-span-1 row-span-full items-center justify-center mb-20 flex flex-col'>
-            <h1 className='text-6xl font-semibold text-white'>Hi! <br/> I am <span className='text-custom-orange'>Jen </span><br/><span className='text-3xl font-light'>FRONTEND WEB DEVELOPER</span></h1> 
-            <button className=' mt-10 mr-5 text-xs px-2 py-2 border-2 rounded-sm text-white hover:border-custom-orange outline-none ease-in-out focus:bg-custom-orange focus:border-white focus:text-black animate-bounce'onClick={()=>toggleNav("portfolio")}>
+    <div className='h-full w-full grid grid-cols-2 grid-rows-2 justify-around md:overflow-x-hidden overflow-hidden bg-custom-black'>
+        <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.8,ease:"easeInOut"}} className='md:col-span-1 row-span-full col-span-full md:items-center items-start justify-center md:mb-20 mb-50  md:pl-32 px-10 flex flex-col'>
+            <h1 className='w-full text-6xl font-semibold text-white'>Hi! <br/> I am <span className='text-custom-orange'>Jen </span><br/>
+           </h1> 
+            <span className='text-3xl md:-ml-10 font-light text-white'>FRONTEND WEB DEVELOPER</span>
+            <button className=' mt-10 mr-5 text-xs px-2 py-2 border-2 rounded-sm md:text-white text-custom-orange hover:border-custom-orange outline-none ease-in-out focus:bg-custom-orange focus:border-white  focus:text-black animate-bounce'onClick={()=>toggleNav("portfolio")}>
                Visit My Works
             </button>
         </motion.div>
        
-        <div className='flex flex-col col-span-1 row-span-full items-center justify-center relative'>
-            <div className='h-full mr-20 border-3 rounded-full border-custom-orange hover:bg-amber-200/20 duration-150 ease-in-out text-white items-center overflow-hidden mb-10 col-span-full'>
+        <div className='flex flex-col md:col-span-1 md:row-span-full col-span-full row-span-1 items-center justify-center relative'>
+            <div className=' hidden md:flex h-full mr-20 border-3 rounded-full border-custom-orange hover:bg-amber-200/20 duration-150 ease-in-out text-white items-center overflow-hidden mb-10 col-span-full'>
                 <motion.img key={'mainImage'} ensure-remount={'mainImage'} initial={{scale:1,opacity:0}} animate={{scale:1.1,opacity:1}} transition={{duration:1.5,ease:"easeInOut"}}  className='h-full w-full object-cover' src={"/image.removebg.png"}alt='image'></motion.img>
             </div>
            
-            <div className='w-full flex pr-5 flex-col items-end gap-7 mr-20 absolute'>
-                 <motion.button key={'fbBtn'} ensure-remount={'fbBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1, ease:"easeIn"}} className='bg-white rounded-sm outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href ='https://www.facebook.com/jenrodriguez25'}>
-                    <FaSquareFacebook className='text-2xl scale-115 text-blue-700'/>
+            <div className='w-full flex -mt-100 md:mt-0 pr-5 flex-col items-end md:gap-7 md:mr-20 mr-5 gap-5 absolute'>
+                 <motion.button key={'fbBtn'} ensure-remount={'fbBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1, ease:"easeIn"}} className='md:h-auto md:w-auto h-9 w-9 bg-white rounded-md outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href ='https://www.facebook.com/jenrodriguez25'}>
+                    <FaSquareFacebook className='md:text-2xl text-4xl scale-115 text-blue-700'/>
                  </motion.button>
 
-                 <motion.button key={'gmailBtn'} ensure-remount={'gmailBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1, delay:0.3, ease:"easeIn"}} className='bg-white rounded-sm outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href = 'mailto:rodriguez.jennifer0204@gmail.com?subject="Job Opportunity"&body="We would like to inform you..."'}>
-                    <BiLogoGmail className='text-2xl text-red-500'/>
+                 <motion.button key={'gmailBtn'} ensure-remount={'gmailBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1, delay:0.3, ease:"easeIn"}} className='bg-white rounded-md outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href = 'mailto:rodriguez.jennifer0204@gmail.com?subject="Job Opportunity"&body="We would like to inform you..."'}>
+                    <BiLogoGmail className='md:text-2xl text-4xl text-red-500'/>
                  </motion.button>
 
-                 <motion.button key={'linkedinBtn'} ensure-remount={'linkedinBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1,delay:0.6, ease:"easeIn"}} className='bg-white rounded-sm outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href='https://www.linkedin.com/in/jen-rodriguez052504'}>
-                    <FaLinkedin className='text-2xl scale-115 text-blue-600'/>
+                 <motion.button key={'linkedinBtn'} ensure-remount={'linkedinBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1,delay:0.6, ease:"easeIn"}} className='bg-white rounded-md outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href='https://www.linkedin.com/in/jen-rodriguez052504'}>
+                    <FaLinkedin className='md:text-2xl text-4xl scale-115 text-blue-600'/>
                  </motion.button>
 
-                 <motion.button key={'githubBtn'} ensure-remount={'githubBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1, delay:0.9, ease:"easeIn"}} className='bg-white rounded-sm outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href='https://github.com/rodriguezjen'}>
-                    <FaSquareGithub className='text-2xl scale-115'/>
+                 <motion.button key={'githubBtn'} ensure-remount={'githubBtn'} initial={{opacity: 0, y: 30}} animate={{opacity: 1, y: 0}} transition={{duration: 1, delay:0.9, ease:"easeIn"}} className='bg-white rounded-md outline-none ring-2 ring-transparent hover:ring-custom-orange hover:animate-bounce'onClick={()=>window.location.href='https://github.com/rodriguezjen'}>
+                    <FaSquareGithub className='md:text-2xl text-4xl scale-125'/>
                  </motion.button>
             </div>
         </div>
